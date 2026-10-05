@@ -1,4 +1,36 @@
 import EventCard from "../components/EventCard";
+
+const events = [
+  {
+    id: 1,
+    title: "Tech Fest 2026",
+    description: "A technology event for students.",
+    date: "20 September 2026",
+    location: "Mumbai",
+  },
+  {
+    id: 2,
+    title: "AI & Machine Learning Workshop",
+    description: "An interactive workshop on AI and machine learning.",
+    date: "25 September 2026",
+    location: "Pune",
+  },
+  {
+    id: 3,
+    title: "Hackathon 2026",
+    description: "A coding competition where students build innovative projects.",
+    date: "5 October 2026",
+    location: "Bangalore",
+  },
+  {
+    id: 4,
+    title: "React Workshop",
+    description: "Learn React from basics to advanced.",
+    date: "25 September 2026",
+    location: "Pune",
+  },
+];
+
 function Home() {
   return (
     <>
@@ -24,44 +56,10 @@ function Home() {
           Upcoming Events
         </h2>
 
-        <div className="grid gap-8 md:grid-cols-3">
-
-          <EventCard
-            title="Tech Fest 2026"
-            description="A technology event for students."
-            date="20 September 2026"
-            location="Mumbai"
-          />
-          <EventCard
-            title="Tech Fest 2026"
-            description="A technology event for students."
-            date="20 September 2026"
-            location="Mumbai"
-          />
-
-          <EventCard
-            title="AI & Machine Learning Workshop"
-            description="An interactive workshop on AI and machine learning."
-            date="25 September 2026"
-            location="Pune"
-          />
-
-          <EventCard
-            title="Hackathon 2026"
-            description="A coding competition where students build innovative projects."
-            date="5 October 2026"
-            location="Bangalore"
-          />
-
-          <EventCard
-            title="React Workshop"
-            description="Learn React from basics to advanced."
-            date="25 September 2026"
-            location="Pune"
-          />
-
-
-
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {events.map((event) => (
+            <EventCard key={event.id} {...event} />
+          ))}
         </div>
       </section>
     </>
